@@ -1,0 +1,44 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+
+.inner{
+	max-width: 880px;
+	margin: 15px auto;
+	text-align: center;
+	// font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	p{
+		@include fs(3.73vw,16px );
+	}
+	h2{
+		padding: 0;
+	}
+	img{
+		max-width: 100%;
+		@include mq(sm){
+			width: 100%;
+		}
+	}
+	ul{
+		padding: 0;
+		li{
+			list-style: none;
+		}
+	}
+	.br_sp{
+		display: block;
+		@include mq(md){
+			display: none;
+		}
+	}
+	.br_pc{
+		display: none;
+		@include mq(md){
+			display: block;
+		}
+	}
+}
+.inner__item{
+	max-width: 770px;
+	padding: 0 15px;
+	margin: 0 auto;
+}

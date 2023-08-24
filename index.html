@@ -1,0 +1,88 @@
+<!-- CSS読みこみ -->
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- favicon -->
+		<!--<link rel="manifest" href="/manifest.json">-->
+		<!-- <link rel="apple-touch-icon-precomposed" href="https://static.chunichi.co.jp/chunichi/pages/event/fukudamiran/img/apple-touch-icon.jpg">
+		<link rel="icon" type="image/jpg" sizes="16x16" href="https://static.chunichi.co.jp/chunichi/pages/event/fukudamiran/img/favicon_16.ico">
+		<link rel="icon" type="image/jpg" sizes="32x32" href="https://static.chunichi.co.jp/chunichi/pages/event/fukudamiran/img/favicon_32.ico"> -->
+		<title>　　</title>
+	<!-- meta -->
+		<meta name="Description" content="　　">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="Keywords" content="　　">
+	<!-- ogp -->
+		<meta property="og:site_name" content="　　">
+		<meta property="og:url" content="https://static.chunichi.co.jp/chunichi/pages/event/fukudamiran/">
+		<meta property="og:image" content="https://static.chunichi.co.jp/chunichi/pages/event/fukudamiran/img/OGP.jpg">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="　　">
+		<meta property="og:description" content="　　">
+		<meta property="og:locale" content="ja_JP">
+	<!-- twittercard -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ncam_chunichi">
+		<link rel="canonical" href="https://static.chunichi.co.jp/chunichi/pages/event/fukudamiran/">
+	<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+			<!-- css -->
+			<link rel="stylesheet" href="./css/resset.css">
+			<link rel="stylesheet" href="./css/style.css?date=202307071111">	
+<!-- Adobefonts読み込み用 -->
+		<script>
+			(function(d) {
+				var config = {
+				kitId: 'xxxxxxx',
+				scriptTimeout: 3000,
+				async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		</script>
+</head>
+
+<body>
+<main>
+	<header id="header"class="header">
+		<div class="header__logo">
+			<img src="img/logo.jpg" alt="logo">
+		</div>
+	</header>
+	<div class="l-container">
+		<div class="AjaxWrap">
+			<!-- Ajaxで取得 -->
+			<div>
+				<script>
+					$(function(){
+					  $.ajax({
+						url: 'https://www.k-saito.co.jp/news/information/8e5b98649637',    // 表示させたいコンテンツがあるページURL
+						cache: false,
+						datatype: 'html',
+						success: function(html) {
+							var h = $(html).find('.article-content');    // 表示させたいコンテンツの要素を指定
+							$('#wrap').append(h);    // append関数で指定先の要素へ出力
+						}
+					  });
+					});
+				  </script>
+				  <div id="wrap">
+					<!-- ここにajaxで呼び出したコンテンツ（＝要素）が出力される -->
+				  </div>
+			</div>
+		</div>
+</div>
+</main>
+<footer>
+
+</footer>
+<!-- JQuery CDN -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
