@@ -13,19 +13,13 @@ html{
 /* ===================================================
 共通項目 
 ====================================================*/
-
-// box-shadow:inset or none　x軸(値が+→右方向に影)　y軸(値が+→下方向に影)　ぼかしの距離　影の大きさ　影の色の変更;
-// box-shadow: 0 8px 16px rgb(42 171 159 / 40%);
-.container{
-    padding: 0 15px 0 15px;
-    margin: 0 auto;
-}
-// フォント読み込みしたら{
-// 	font-display: swap;
-// }
 p,h1,h2,h3,h4,ul,li{
 	padding: 0;
 	margin: 0;
+}
+body{
+	margin: 0;
+	padding: 0;
 }
 a{
 	text-decoration: none;
@@ -37,33 +31,28 @@ a{
 button{
 	touch-action: manipulation;
 }
-body{
-	margin: 0;
-	padding: 0;
-	a{
-	text-decoration: none;
-	color: #000;
-	}
+ul{
+padding: 0;
 	li{
 	list-style: none;
 	}
-	ul{
-	padding: 0;
+}
+.br_sp{
+	display: block;
+	@include mq(md){
+		display: none;
 	}
-    .br_sp{
-        display: block;
-        @include mq(md){
-            display: none;
-        }
-    }
-    .br_pc{
-        display: none;
-        @include mq(lg){
-            display: block;
-        }
-    }
-	img{
-		max-width: 100%;
-		height: auto;
+}
+.br_pc{
+	display: none;
+	@include mq(lg){
+		display: block;
+	}
+}
+img{
+	max-width: 100%;
+	height: auto;
+	@include mq(sm){
+		width: 100%;
 	}
 }

@@ -1,0 +1,41 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+
+	.tab-list {
+	display: flex;
+	li {
+		width: 100px;
+		border: 1px solid #333;
+		border-left: none;
+		border-bottom: none;
+		font-size: 20px;
+		text-align: center;
+		padding: 10px;
+		color: #333;
+		transition: 0.2s ease;
+		cursor: pointer;
+		&:first-child {
+		border-left: 1px solid #333;
+		}
+		&:hover {
+		background: #333;
+		color: #fff;
+		}
+		&.active {
+		background: #333;
+		color: #fff;
+		}
+	}
+	}
+	.tab-container {
+	border: 1px solid #333;
+	padding: 20px;
+	line-height: 2;
+	height: 300px;
+	.tab-content {
+		display: none;
+		&.active {
+		display: block;
+		}
+	}
+	}
