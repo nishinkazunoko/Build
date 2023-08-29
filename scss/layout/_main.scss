@@ -1,42 +1,11 @@
-
-
-// // リストなどの子要素をliは左寄せ、ulを中央寄せ
-// body{
-// 	justify-content: flex-start;
-// 	align-items: center;
-// 	grid-template-columns: 25% 25% 25% 25%;
-// 	flex-wrap: wrap;
-// 	display: grid;
-// 	justify-content: center;
-// 	grid-gap: 1rem;
-// 	padding: 0 15px!important;
-// }
-/* ===================================================
-画像を100％表示にする（これだけ100％）
-====================================================*/
-
-// .mv{
-// 	width: 100vw;
-// 	margin: 0 calc(50% - 50vw);
-// }
-
-/* ===================================================
-l-container
-====================================================*/ 
-
-// .l-container{
-// 	line-height:1.5;
-// 	scroll-behavior: smooth;
-// }
-
-
-// .bg{
-// 	background: url(../img/25213514_m.jpg) top right /cover no-repeat;
-// 	// background: url("//stg-static.chunichi.co.jp/chunichi/images/freepages/k/shinkansen_biz_interview/bg_joint.png") center center /cover no-repeat;
-// 	&::after{
-// 		content: "";
-// 		padding-top:15%;
-// 		background: url(../img/flw.jpg)top right / cover no-repeat;
-// 		display: block;
-// 	}
-// }
+.container{
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+}
+.inner{
+	max-width: 880px;
+	margin: 15px auto;
+	text-align: center;
+	// font-family: "Yu Gothic","游ゴシック体", YuGothic,"Yu Gothic Medium", "游ゴシック Medium", "游ゴシック", sans-serif;
+	// font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+}

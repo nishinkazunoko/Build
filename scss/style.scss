@@ -9,14 +9,17 @@
 /*--------------------------------------*
  * layout
  *--------------------------------------*/
-@use "./layout/header";
 @use "./layout/main";
 
 /*--------------------------------------*
  * object
  *--------------------------------------*/
 // component
-@use "./object/component/inner";
+@use "./object/component/btn";
+@use "./object/component/header";
+@use "./object/component/tabmenu";
+@use "./object/component/wave";
+
 // project
 @use "./object/project/sponsor";
 @use "./object/project/sns";
