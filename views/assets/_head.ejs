@@ -1,0 +1,72 @@
+<head>
+    <meta charset="utf-8">
+    <title><% if( title ) { %><%- title %> ：中日新聞Web<% } %></title>
+<!-- meta -->
+    <meta name="description" content="<%- description %>">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="ドームドッジ,ドッジボール,大会,ナゴヤドーム,愛知,名古屋">
+
+<!-- favicon -->
+	<!-- Android -->
+    <!-- <link rel="manifest" href="manifest/manifest.webmanifest"> -->
+	<!-- ios -->
+    <link rel="apple-touch-icon" href="<% if( url ) { %><%- url %>img/apple-touch-icon.png<% } %>">
+    <link rel="icon" href="<% if( url ) { %><%- url %>img/favicon_32.ico<% } %>" type="image/x-icon">
+    <link rel="icon" type="image/jpg" sizes="16x16" href="<% if( url ) { %><%- url %>img/favicon_16.ico<% } %>">
+    <link rel="icon" type="image/jpg" sizes="32x32" href="<% if( url ) { %><%- url %>img/favicon_32.ico<% } %>">
+
+<!-- ogp -->
+	<meta property="og:site_name" content="<% if( title ) { %><%- title %> ：中日新聞Web<% } %>">
+	<meta property="og:url" content="<%- url %>">
+	<meta property="og:image" content="<% if( url ) { %><%- url %>img/dome2023_ogp.webp<% } %>">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="<% if( title ) { %><%- title %> ：中日新聞Web<% } %>">
+	<meta property="og:description" content="<%- description %>">
+  <meta property="og:locale" content="ja_JP">
+
+<!-- twittercard -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@userID">
+	<link rel="canonical" href="<%- url %>">
+  <link rel="stylesheet" href="<%- rootPathCss %>/style.css">
+
+<!-- 事前に読み込む画像 -->
+	<link rel="preload" href="<%- rootPath %>img/logo.webp" as="image">
+	<link rel="preload" href="<%- rootPath %>img/fv-bg.webp" as="image">
+	<link rel="preload" href="<%- rootPath %>img/fv-bg__forSp.webp" as="image">
+	<link rel="preload" href="<%- rootPath %>img/chara.png" as="image">
+	<link rel="preload" href="<%- rootPath %>img/chara__forSp.png" as="image">
+
+<!-- Reduce the impact of third-party codes -->
+	<meta name="dns-prefetch-control" content="on">
+	<link rel="preconnect dns-prefetch" href="https://marketingplatform.google.com/about/tag-manager/">
+	<link rel="preconnect dns-prefetch" href="https://www.stream.co.jp/">
+	<link rel="preconnect dns-prefetch" href="https://www.facebook.com/">
+	<link rel="preconnect dns-prefetch" href="https://use.typekit.net/">
+	<link rel="preconnect dns-prefetch" href="https://fonts.adobe.com/">
+	<link rel="preconnect dns-prefetch" href="http://stream.ne.jp/">
+
+	<!-- Adobefonts読み込み用 -->
+		<script>
+			(function(d) {
+				var config = {
+				kitId: 'loj5thi',
+				scriptTimeout: 3000,
+				async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		</script>
+		<style>
+			@media screen and (max-width:768px) {
+				body.Android .situation__item {
+					margin:20px auto 0;
+				}
+				body.Android .about{
+					padding: 100px 15px 300px;
+					background-size: 100% 100%;
+				}
+			}
+		</style>
+  </head>

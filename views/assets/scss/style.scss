@@ -1,0 +1,29 @@
+/*--------------------------------------*
+ * foundation
+ *--------------------------------------*/
+@use "./foundation/base";
+@use "./foundation/variables";
+@use "./foundation/breakpoints";
+@use "./foundation/mixins";
+
+/*--------------------------------------*
+ * layout
+ *--------------------------------------*/
+@use "./layout/main";
+
+/*--------------------------------------*
+ * object
+ *--------------------------------------*/
+// component
+@use "./object/component/btn";
+@use "./object/component/header";
+@use "./object/component/tabmenu";
+@use "./object/component/wave";
+
+// project
+@use "./object/project/sponsor";
+@use "./object/project/sns";
+// utility
+@use "./object/utility/common";
+
+
