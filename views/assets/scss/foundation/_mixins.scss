@@ -1,0 +1,154 @@
+@use "./breakpoints" as *;
+
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+// ホバーをPCのみで指定
+@mixin hover {
+	@media (hover: hover){
+		&:where(:any-link, :enabled, summary):hover {
+		@content;
+	}
+	}
+}
+@mixin fl($justift-content,$align-items){
+	display: flex;
+	justify-content: $justift-content;
+	align-items: $align-items;
+}
+
+@mixin fs($sp,$lg){
+	font-size: $sp;
+	@include mq(lg){
+		font-size: $lg;
+	}
+}
+
+@mixin mt($sp,$pc){
+	margin-top: $sp;
+	@include mq(lg){
+		margin-top: $pc;
+	}
+}
+@mixin mb($sp,$pc){
+	margin-bottom: $sp;
+	@include mq(lg){
+		margin-bottom: $pc;
+	}
+}
+@mixin maxWid{
+	width: 100vw;
+	margin: 0 calc(50% - 50vw);
+
+}
+// pxからremに計算　 （例）font-size: rem(36px);
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+	  @return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+@function rem($px, $base: 16px) {
+	$value: $px;
+	// 単位がpx以外の場合は警告を出してそのまま返す
+	@if (unit($px) != 'px') {
+	@warn 'rem()の引数にpx以外の値を指定しても計算できません';
+	@return $value;
+	}
+
+	$value:calc(strip-unit($px) / strip-unit($base)) * 1rem;
+
+	@return $value;
+}
+// pxからvwに計算　 （例） width: vw(40px); width: vw(40px, 768px); width: vw(50%);
+@function vw($px, $base: 375px) {
+	$value: $px;
+	// 単位がpx以外の場合は警告を出してそのまま返す
+	@if (unit($px) != 'px') {
+	@warn 'vw()の引数にpx以外の値を指定しても計算できません';
+	@return $value;
+	}
+	$value: (strip-unit($px) / strip-unit($base)) * 100vw;
+
+	@return $value;
+}
+
+// iframeの比率を維持したままレスポンシブ対応　例 @include aspect-ratio(16,9);
+@mixin aspect-ratio($width, $height) {
+	position: relative;
+	&::before {
+	content: '';
+	float: left;
+	padding-top: ($height / $width) * 100%;
+	}
+	
+	&::after {
+	content: '';
+	display: block;
+	clear: both;
+	}
+	
+	& > :first-child {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}
+}
+
+//三角形を生成　例：@include triangle(upward, 20px, 15px, #cd5c5c);
+//作成例はこちら：https://codepen.io/tak-dcxi/pen/oNzojRw
+@mixin triangle($direction, $width, $height, $color: currentColor) {
+// 定義されている方向が指定されている、もしくは方向が指定されていなかったらエラーを返す
+@if not index(upward rightward downward leftward upper-left upper-right lower-right lower-left, $direction) {
+	@error 'triangle()の方向は"upward","rightward","downward","leftward","upper-left","upper-right","lower-right","lower-left"から指定してください';
+}
+
+border-style: solid;
+height: 0;
+width: 0;
+
+@if $direction == upward {
+	border-color: transparent transparent $color transparent;
+	border-width: 0 ($width / 2) $height ($width / 2);
+}
+
+@if $direction == rightward {
+	border-color: transparent transparent transparent $color;
+	border-width: ($height / 2) 0 ($height / 2) $width;
+}
+
+@if $direction == downward {
+	border-color: $color transparent transparent transparent;
+	border-width: $height ($width / 2) 0 ($width / 2);
+}
+
+@if $direction == leftward {
+	border-color: transparent $color transparent transparent;
+	border-width: ($height / 2) $width ($height / 2) 0;
+}
+
+@if $direction == upper-left {
+	border-color: $color transparent transparent transparent;
+	border-width: $height $height 0 0;
+}
+
+@if $direction == upper-right {
+	border-color: transparent $color transparent transparent;
+	border-width: 0 $height $height 0;
+}
+
+@if $direction == lower-right {
+	border-color: transparent transparent $color transparent;
+	border-width: 0 0 $height $height;
+}
+
+@if $direction == lower-left {
+	border-color: transparent transparent transparent $color;
+	border-width: $height 0 0 $height;
+}
+}
