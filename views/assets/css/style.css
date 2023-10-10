@@ -164,8 +164,8 @@ img {
   top: 15px;
   right: 15px;
   background-color: green;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: rem(52px);
+  height: rem(52px);
   z-index: 21;
   border-radius: 10px;
   -webkit-transition: 0.3s ease;
