@@ -1,0 +1,2 @@
+command ¨@gulp ejs
+index,ejsã•”‚ÅURL‚â•¶Œ¾‚ğİ’è‚·‚é
