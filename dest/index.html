@@ -25,13 +25,13 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="タイトル ：中日新聞Web">
 	<meta property="og:description" content="説明文">
-  <meta property="og:locale" content="ja_JP">
+	<meta property="og:locale" content="ja_JP">
 
 <!-- twittercard -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@userID">
 	<link rel="canonical" href="https://static.chunichi.co.jp/chunichi/pages/event/domedodge/">
-  <link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
 
 <!-- 事前に読み込む画像 -->
 	<link rel="preload" href="./assets/img/logo.webp" as="image">
@@ -41,7 +41,8 @@
 	<link rel="preload" href="./assets/img/chara__forSp.png" as="image">
 
 <!-- Reduce the impact of third-party codes -->
-	<meta name="dns-prefetch-control" content="on">
+	<!-- <meta name="dns-prefetch-control" content="on"> -->
+	<meta http-equiv="x-dns-prefetch-control" content="on">
 	<link rel="preconnect dns-prefetch" href="https://marketingplatform.google.com/about/tag-manager/">
 	<link rel="preconnect dns-prefetch" href="https://www.stream.co.jp/">
 	<link rel="preconnect dns-prefetch" href="https://www.facebook.com/">
@@ -71,7 +72,7 @@
 				}
 			}
 		</style>
-  </head>
+</head>
 
 <body class="page">
 
@@ -85,7 +86,29 @@
   </nav>
 </header>
 <section>
-  ページ内容
+  <picture class="omikuji_ttl">
+    <source
+    media="(min-width: 1000px)"
+    type="image/webp"
+    width="380"
+    height="136"
+    srcset="./img/item_02-ttl_min.webp 1x,./img/item_02-ttl.webp 2x"
+    >
+    <source
+    media="(max-width: 767.98px)"
+    type="image/webp"
+    width="250"
+    height="89"
+    srcset="./img/item_02-ttl_minSp.webp 1x,./img/item_02-ttl_min.webp 2x"
+    >
+    <img alt="吉" 
+    src="./img/item_02-ttl.webp"
+    width="501"
+    height="179"
+    decoding="async"
+    loading="lazy"
+    >
+  </picture>
 </section>
 <footer>
   <small class="copyWrite">&copy; company name</small>
