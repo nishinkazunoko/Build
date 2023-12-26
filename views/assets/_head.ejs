@@ -23,13 +23,13 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="<% if( title ) { %><%- title %> ：中日新聞Web<% } %>">
 	<meta property="og:description" content="<%- description %>">
-  <meta property="og:locale" content="ja_JP">
+	<meta property="og:locale" content="ja_JP">
 
 <!-- twittercard -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@userID">
 	<link rel="canonical" href="<%- url %>">
-  <link rel="stylesheet" href="<%- rootPathCss %>/style.css">
+	<link rel="stylesheet" href="<%- rootPathCss %>/style.css">
 
 <!-- 事前に読み込む画像 -->
 	<link rel="preload" href="<%- rootPath %>img/logo.webp" as="image">
@@ -39,7 +39,8 @@
 	<link rel="preload" href="<%- rootPath %>img/chara__forSp.png" as="image">
 
 <!-- Reduce the impact of third-party codes -->
-	<meta name="dns-prefetch-control" content="on">
+	<!-- <meta name="dns-prefetch-control" content="on"> -->
+	<meta http-equiv="x-dns-prefetch-control" content="on">
 	<link rel="preconnect dns-prefetch" href="https://marketingplatform.google.com/about/tag-manager/">
 	<link rel="preconnect dns-prefetch" href="https://www.stream.co.jp/">
 	<link rel="preconnect dns-prefetch" href="https://www.facebook.com/">
@@ -69,4 +70,4 @@
 				}
 			}
 		</style>
-  </head>
+</head>
