@@ -1,3 +1,19 @@
 <footer>
-  <small class="copyWrite">&copy; company name</small>
+  <p><small class="copyWrite">&copy; company name</small></p>
 </footer>
+<!-- lottie -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@1/dist/lottie-player.js"></script>
+<script src="./assets/js/observers.js" defer></script>
+<script>
+  LottieInteractivity.create({
+  mode: 'scroll',
+  player: '#firstLottie',
+  actions: [
+    {
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 100],
+    },
+  ],
+});
+</script>

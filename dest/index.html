@@ -49,6 +49,8 @@
 	<link rel="preconnect dns-prefetch" href="https://use.typekit.net/">
 	<link rel="preconnect dns-prefetch" href="https://fonts.adobe.com/">
 	<link rel="preconnect dns-prefetch" href="http://stream.ne.jp/">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 
 	<!-- Adobefonts読み込み用 -->
 		<script>
@@ -76,7 +78,7 @@
 
 <body class="page">
 
-<header class="header">
+<!-- <header class="header">
   <div class="logo"><a href="./assets/" id="LogoImg">ロゴ</a></div>
   <nav class="nav">
     <a href="./assets/page_1/">ページ1</a>
@@ -84,35 +86,128 @@
     <a href="./assets/page_3/">ページ3</a>
     <a href="./assets/page_4/">ページ4</a>
   </nav>
-</header>
-<section>
-  <picture class="omikuji_ttl">
-    <source
-    media="(min-width: 1000px)"
-    type="image/webp"
-    width="380"
-    height="136"
-    srcset="./img/item_02-ttl_min.webp 1x,./img/item_02-ttl.webp 2x"
-    >
-    <source
-    media="(max-width: 767.98px)"
-    type="image/webp"
-    width="250"
-    height="89"
-    srcset="./img/item_02-ttl_minSp.webp 1x,./img/item_02-ttl_min.webp 2x"
-    >
-    <img alt="吉" 
-    src="./img/item_02-ttl.webp"
-    width="501"
-    height="179"
-    decoding="async"
-    loading="lazy"
-    >
-  </picture>
-</section>
-<footer>
-  <small class="copyWrite">&copy; company name</small>
-</footer>
+</header> -->
+<!--contents-->
+<div id="contents" class="contents">
+  <!--大吉-->
+    <!-- <section class="wrapper dai">
+      <div class="omikuji_frame">
+        <div class="omikuji_inner">
+          <picture class="omikuji_ttl">
+            <source
+            media="(min-width: 1000px)"
+            type="image/webp"
+            width="380"
+            height="118"
+            srcset="./assets/img/item_01-ttl_min.webp 1x,./assets/img/item_01-ttl.webp 2x"
+            >
+            <source
+            media="(max-width: 767.98px)"
+            type="image/webp"
+            width="250"
+            height="78"
+            srcset="./assets/img/item_01-ttl_minSp.webp 1x,./assets/img/item_01-ttl_min.webp 2x"
+            >
+            <img 
+            src="./assets/img/item_01-ttl.webp"
+            alt="大吉"
+            width="581"
+            height="180"
+            decoding="async"
+            loading="lazy"
+            >
+          </picture>
+          <p class="hiraPro">
+            いつも前向きな気持ちで物事にあたれば、<br class="br_pc"><wbr>どんどん運気が向上していきます。<br>
+            仕事運特によし！順調に伸び進みます。<br>
+            心身ともに健やかな年になるでしょう。<br>
+            ブリの照り焼きを食べれば、<br class="br_pc">出世・昇進<wbr>は間違いなし<span class="Q">?!</span>
+          </p>
+        </div>
+      </div>
+    </section> -->
+</div>
+<!--contents-->
+<!--lottie test-->
+<lottie-player
+  id="firstLottie"
+  src="https://assets2.lottiefiles.com/packages/lf20_i9mxcD.json"
+  style="width:400px; height: 400px;"
+>
+</lottie-player>
+<!--lottie test-->
+<!-- スケルトンスクリーン -->
+<ul class="list">
+  <li class="item">
+    <div class="item__img">
+      <div class="loading" data-js="loading">
+        <span class="loading__img"></span>
+      </div>
+      <img class="img"
+      src="./assets/img/item_02.webp"
+      />
+    </div>
+    <div class="item__img">
+      <div class="loading" data-js="loading">
+        <span class="loading__img"></span>
+      </div>
+      <img class="img"
+      src="./assets/img/item_03.webp"
+      />
+    </div>
+    <div class="item__img">
+      <div class="loading" data-js="loading">
+        <span class="loading__img"></span>
+      </div>
+      <img class="img"
+      src="./assets/img/item_04.webp"
+      />
+    </div>
+    <div class="item__img">
+      <div class="loading" data-js="loading">
+        <span class="loading__img"></span>
+      </div>
+      <img class="img"
+      src="./assets/img/item_05.webp"
+      />
+    </div>
+  </li>
+</ul>
+<!-- スケルトンスクリーン -->
 
+<footer>
+  <p><small class="copyWrite">&copy; company name</small></p>
+</footer>
+<!-- lottie -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@1/dist/lottie-player.js"></script>
+<script src="./assets/js/observers.js" defer></script>
+<script>
+  LottieInteractivity.create({
+  mode: 'scroll',
+  player: '#firstLottie',
+  actions: [
+    {
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 100],
+    },
+  ],
+});
+</script>
+<script>
+// ローディングの要素取得
+const loadingItem = document.querySelectorAll("[data-js=loading]");
+
+// loading非表示クラスを追加
+const hideLoading = (list, className) => {
+  list.forEach((element) => {
+    element.classList.add(className);
+  });
+};
+
+window.onload = () => {
+  hideLoading(loadingItem, "loading--hidden");
+};
+</script>
 </body>
 </html>
