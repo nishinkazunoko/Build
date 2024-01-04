@@ -17,6 +17,7 @@
     "gulp-sass": "^5.1.0"
   },
   "dependencies": {
+    "@lottiefiles/lottie-interactivity": "^1.6.2",
     "globalthis": "^1.0.3",
     "sass": "^1.67.0"
   }

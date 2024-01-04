@@ -49,6 +49,8 @@
 	<link rel="preconnect dns-prefetch" href="https://use.typekit.net/">
 	<link rel="preconnect dns-prefetch" href="https://fonts.adobe.com/">
 	<link rel="preconnect dns-prefetch" href="http://stream.ne.jp/">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 
 	<!-- Adobefonts読み込み用 -->
 		<script>
@@ -89,8 +91,24 @@
   ページ内容
 </section>
 <footer>
-  <small class="copyWrite">&copy; company name</small>
+  <p><small class="copyWrite">&copy; company name</small></p>
 </footer>
+<!-- lottie -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@1/dist/lottie-player.js"></script>
+<script src="./assets/js/observers.js" defer></script>
+<script>
+  LottieInteractivity.create({
+  mode: 'scroll',
+  player: '#firstLottie',
+  actions: [
+    {
+      visibility: [0, 1],
+      type: 'seek',
+      frames: [0, 100],
+    },
+  ],
+});
+</script>
 
 </body>
 </html>
