@@ -14,8 +14,11 @@ const fadeIn = (target) => {
 
   if (target.classList.contains('up')) {
 
-    target.classList.add('is-active');
+    target.classList.add('animate__fadeInDownBig');
+  // if (target.classList.contains('up')) {
 
+  //   target.classList.add('is-active');
+  
   } else if (target.classList.contains('in')) {
 
     target.classList.add('is-active');

@@ -179,6 +179,22 @@ img {
   display: none;
 }
 
+p {
+  line-height: 2;
+}
+p::before, p::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+}
+p::before {
+  margin-top: calc((1 - 2) * 0.5em);
+}
+p::after {
+  margin-bottom: calc((1 - 2) * 0.5em);
+}
+
 .btn {
   font-size: 20px;
   padding: 30px 0;
@@ -221,8 +237,8 @@ img {
   top: 15px;
   right: 15px;
   background-color: green;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: rem(52px);
+  height: rem(52px);
   z-index: 21;
   border-radius: 10px;
   -webkit-transition: 0.3s ease;

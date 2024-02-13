@@ -49,9 +49,9 @@
 	<link rel="preconnect dns-prefetch" href="https://use.typekit.net/">
 	<link rel="preconnect dns-prefetch" href="https://fonts.adobe.com/">
 	<link rel="preconnect dns-prefetch" href="http://stream.ne.jp/">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 
+<!-- cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" defers>
 	<!-- Adobefonts読み込み用 -->
 		<script>
 			(function(d) {
@@ -129,55 +129,30 @@
 </div>
 <!--contents-->
 <!--lottie test-->
-<lottie-player
+<!-- <lottie-player
   id="firstLottie"
   src="https://assets2.lottiefiles.com/packages/lf20_i9mxcD.json"
   style="width:400px; height: 400px;"
 >
-</lottie-player>
+</lottie-player> -->
 <!--lottie test-->
-<!-- スケルトンスクリーン -->
-<ul class="list">
-  <li class="item">
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_02.webp"
-      />
-    </div>
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_03.webp"
-      />
-    </div>
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_04.webp"
-      />
-    </div>
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_05.webp"
-      />
-    </div>
-  </li>
-</ul>
-<!-- スケルトンスクリーン -->
+<!-- animated.css test -->
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+
+<h4 class="animate__animated trigger up mt-40">This is text to test whether "animated css" is being used correctly.</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolorem temporibus unde in tempora facere harum nemo, nam, sunt dolor, libero sit perspiciatis ipsa. A officia quo placeat eaque sint.</p>
+<!-- animated.css test -->
+
 
 <footer>
   <p><small class="copyWrite">&copy; company name</small></p>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 <!-- lottie -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@1/dist/lottie-player.js"></script>
 <script src="./assets/js/observers.js" defer></script>
@@ -194,20 +169,6 @@
   ],
 });
 </script>
-<script>
-// ローディングの要素取得
-const loadingItem = document.querySelectorAll("[data-js=loading]");
 
-// loading非表示クラスを追加
-const hideLoading = (list, className) => {
-  list.forEach((element) => {
-    element.classList.add(className);
-  });
-};
-
-window.onload = () => {
-  hideLoading(loadingItem, "loading--hidden");
-};
-</script>
 </body>
 </html>

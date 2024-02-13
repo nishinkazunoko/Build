@@ -56,67 +56,27 @@ url = 'https://static.chunichi.co.jp/chunichi/pages/event/domedodge/';
 </div>
 <!--contents-->
 <!--lottie test-->
-<lottie-player
+<!-- <lottie-player
   id="firstLottie"
   src="https://assets2.lottiefiles.com/packages/lf20_i9mxcD.json"
   style="width:400px; height: 400px;"
 >
-</lottie-player>
+</lottie-player> -->
 <!--lottie test-->
-<!-- スケルトンスクリーン -->
-<ul class="list">
-  <li class="item">
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_02.webp"
-      />
-    </div>
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_03.webp"
-      />
-    </div>
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_04.webp"
-      />
-    </div>
-    <div class="item__img">
-      <div class="loading" data-js="loading">
-        <span class="loading__img"></span>
-      </div>
-      <img class="img"
-      src="./assets/img/item_05.webp"
-      />
-    </div>
-  </li>
-</ul>
-<!-- スケルトンスクリーン -->
+<!-- animated.css test -->
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+<img src="assets/img/item02.jpg" width="600" height="400">
+
+<h4 class="animate__animated trigger up mt-40">This is text to test whether "animated css" is being used correctly.</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolorem temporibus unde in tempora facere harum nemo, nam, sunt dolor, libero sit perspiciatis ipsa. A officia quo placeat eaque sint.</p>
+<!-- animated.css test -->
+
 
 <%- include(rootPath + '_footer') %>
-<script>
-// ローディングの要素取得
-const loadingItem = document.querySelectorAll("[data-js=loading]");
 
-// loading非表示クラスを追加
-const hideLoading = (list, className) => {
-  list.forEach((element) => {
-    element.classList.add(className);
-  });
-};
-
-window.onload = () => {
-  hideLoading(loadingItem, "loading--hidden");
-};
-</script>
 </body>
 </html>
