@@ -1,3 +1,7 @@
+@use "../foundation/breakpoints" as *;
+@use "../foundation/mixins" as *;
+
+
 .loading {
 position: absolute;
 display: block;
@@ -56,4 +60,9 @@ background-color: #e2e2e2;
 /* スケルトンスクリーンを非表示にするクラス */
 .loading--hidden {
 display: none;
+}
+
+p{
+	@include half-leading(2);
+	line-height: 2;
 }

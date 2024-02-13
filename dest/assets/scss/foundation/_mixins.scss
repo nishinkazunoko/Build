@@ -41,39 +41,6 @@
 @mixin maxWid{
 	width: 100vw;
 	margin: 0 calc(50% - 50vw);
-
-}
-// pxからremに計算　 （例）font-size: rem(36px);
-@function strip-unit($number) {
-	@if type-of($number) == 'number' and not unitless($number) {
-	  @return $number / ($number * 0 + 1);
-	}
-
-	@return $number;
-}
-@function rem($px, $base: 16px) {
-	$value: $px;
-	// 単位がpx以外の場合は警告を出してそのまま返す
-	@if (unit($px) != 'px') {
-	@warn 'rem()の引数にpx以外の値を指定しても計算できません';
-	@return $value;
-	}
-
-	$value:calc(strip-unit($px) / strip-unit($base)) * 1rem;
-
-	@return $value;
-}
-// pxからvwに計算　 （例） width: vw(40px); width: vw(40px, 768px); width: vw(50%);
-@function vw($px, $base: 375px) {
-	$value: $px;
-	// 単位がpx以外の場合は警告を出してそのまま返す
-	@if (unit($px) != 'px') {
-	@warn 'vw()の引数にpx以外の値を指定しても計算できません';
-	@return $value;
-	}
-	$value: (strip-unit($px) / strip-unit($base)) * 100vw;
-
-	@return $value;
 }
 
 // iframeの比率を維持したままレスポンシブ対応　例 @include aspect-ratio(16,9);
@@ -100,55 +67,19 @@
 	}
 }
 
-//三角形を生成　例：@include triangle(upward, 20px, 15px, #cd5c5c);
-//作成例はこちら：https://codepen.io/tak-dcxi/pen/oNzojRw
-@mixin triangle($direction, $width, $height, $color: currentColor) {
-// 定義されている方向が指定されている、もしくは方向が指定されていなかったらエラーを返す
-@if not index(upward rightward downward leftward upper-left upper-right lower-right lower-left, $direction) {
-	@error 'triangle()の方向は"upward","rightward","downward","leftward","upper-left","upper-right","lower-right","lower-left"から指定してください';
-}
-
-border-style: solid;
-height: 0;
-width: 0;
-
-@if $direction == upward {
-	border-color: transparent transparent $color transparent;
-	border-width: 0 ($width / 2) $height ($width / 2);
-}
-
-@if $direction == rightward {
-	border-color: transparent transparent transparent $color;
-	border-width: ($height / 2) 0 ($height / 2) $width;
-}
-
-@if $direction == downward {
-	border-color: $color transparent transparent transparent;
-	border-width: $height ($width / 2) 0 ($width / 2);
-}
-
-@if $direction == leftward {
-	border-color: transparent $color transparent transparent;
-	border-width: ($height / 2) $width ($height / 2) 0;
-}
-
-@if $direction == upper-left {
-	border-color: $color transparent transparent transparent;
-	border-width: $height $height 0 0;
-}
-
-@if $direction == upper-right {
-	border-color: transparent $color transparent transparent;
-	border-width: 0 $height $height 0;
-}
-
-@if $direction == lower-right {
-	border-color: transparent transparent $color transparent;
-	border-width: 0 0 $height $height;
-}
-
-@if $direction == lower-left {
-	border-color: transparent transparent transparent $color;
-	border-width: $height 0 0 $height;
-}
+// line-heightを単位なし（em 倍数）指定の場合
+@mixin half-leading($line-height) {
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+	}
+	&::before {
+		margin-top: calc((1 - #{$line-height}) * 0.5em);    
+	}
+	&::after {
+		margin-bottom: calc((1 - #{$line-height}) * 0.5em); 
+	}
 }
